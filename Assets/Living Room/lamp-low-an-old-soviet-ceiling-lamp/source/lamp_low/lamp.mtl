@@ -1,0 +1,96 @@
+# Blender 4.0.2 MTL File: 'lamp.blend'
+# www.blender.org
+
+newmtl lamp_ceramic
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textur/lamp ceramic_Base_color.png
+map_Ns textur/lamp ceramic_Roughness.png
+map_refl textur/lamp ceramic_Metallic.png
+map_Bump -bm 1.000000 textur/lamp ceramic_Normal.png
+
+newmtl lamp_glass
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd textur/lamp glass_Base_color.png
+map_Ns textur/lamp glass_Roughness.png
+map_refl textur/lamp glass_Metallic.png
+map_d textur/lamp glass_Opacity.png
+map_Bump -bm 5.900000 textur/lamp glass_Normal.png
+
+newmtl lamp_med
+Ka 0.921260 0.921260 0.921260
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd textur/lamp med_Base_color.png
+map_Ns textur/lamp med_Roughness.png
+map_refl textur/lamp med_Metallic.png
+map_Bump -bm 1.000000 textur/lamp med_Normal.png
+
+newmtl lamp_med.2
+Ka 0.921260 0.921260 0.921260
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd textur/lamp med.2_Base_color.png
+map_Ns textur/lamp med.2_Roughness.png
+map_Bump -bm 1.000000 textur/lamp med.2_Normal.png
+
+newmtl lamp_med.3
+Ka 0.921260 0.921260 0.921260
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd textur/lamp med.3_Base_color.png
+map_Ns textur/lamp med.3_Roughness.png
+map_refl textur/lamp med.3_Metallic.png
+map_Bump -bm 1.000000 textur/lamp med.3_Normal.png
+
+newmtl lamp_med_4
+Ka 0.834646 0.834646 0.834646
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd textur/lamp med 4_Base_color.png
+map_Ns textur/lamp med 4_Roughness.png
+map_refl textur/lamp med 4_Metallic.png
+map_Bump -bm 1.000000 textur/lamp med 4_Normal.png
+
+newmtl lamp_plastic
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textur/lamp plastic_Base_color.png
+map_Ns textur/lamp plastic_Roughness.png
+map_refl textur/lamp plastic_Metallic.png
+map_Bump -bm 1.000000 textur/lamp plastic_Normal.png
+
+newmtl lemp_glass_emishen
+Ns 714.793457
+Ka 1.000000 1.000000 1.000000
+Kd 0.800529 0.710957 0.326715
+Ks 0.500000 0.500000 0.500000
+Ni 1.450000
+illum 2
+map_Ke textur/lemp glass emishen_Emissive.png
+map_d textur/lemp glass emishen_Opacity.png
+map_Bump -bm 3.000000 textur/lemp glass emishen_Normal.png
