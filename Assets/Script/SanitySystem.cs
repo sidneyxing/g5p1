@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI; // 必須引用 UI 命名空間
+using UnityEngine.UI;
 using TMPro;
 
 public class SanitySystem : MonoBehaviour
@@ -9,8 +9,7 @@ public class SanitySystem : MonoBehaviour
 
     [Header("Sanity Settings")]
     public float maxSanity = 100f;
-    public float currentSanity;
-    currentSanity = 50;
+    public float currentSanity = 50f; // ✅ 修改 1：直接在宣告的時候給它初始值 50
 
     [Header("UI References")]
     public Image sanityBarFill;  // 拖入黃條 Image
@@ -23,7 +22,7 @@ public class SanitySystem : MonoBehaviour
 
     void Start()
     {
-        currentSanity = maxSanity;
+        // ✅ 修改 2：把原本會強制變成 100 的那行刪掉了，這樣一開場才是 50！
         UpdateUI();
     }
 
@@ -42,7 +41,7 @@ public class SanitySystem : MonoBehaviour
         {
             // 計算比例 (0.0 到 1.0)
             sanityBarFill.fillAmount = currentSanity / maxSanity;
-            
+
             // 如果理智太低變紅色 (選用)
             sanityBarFill.color = (currentSanity < 30) ? Color.red : Color.yellow;
         }
