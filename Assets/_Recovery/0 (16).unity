@@ -73025,7 +73025,7 @@ GameObject:
   m_Layer: 0
   m_Name: '[BuildingBlock] Camera Rig'
   m_TagString: Player
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: 90f8fdd975ce6b74f9ff13d9672b45eb, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -73202,11 +73202,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb437e9a44b5c7542870a9e936970cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FootStep
+  footstepSFX: []
   audioSource: {fileID: 1408151986}
-  footstepClips: []
-  walkStepInterval: 0.5
-  runStepInterval: 0.3
-  velocityThreshold: 0.1
+  stepDistance: 0.8
 --- !u!82 &1408151986
 AudioSource:
   m_ObjectHideFlags: 0
