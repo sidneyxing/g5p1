@@ -42290,7 +42290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842751360}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.008833714, y: -0.7070982, z: 0.0035074113, w: 0.70705163}
+  m_LocalRotation: {x: -0.0061706076, y: -0.7070799, z: 0.0061706076, w: 0.7070799}
   m_LocalPosition: {x: 0.832, y: 3.4557455, z: -0.1593355}
   m_LocalScale: {x: 0.091447614, y: 0.09144762, z: 0.091447614}
   m_ConstrainProportionsScale: 0
@@ -42298,7 +42298,7 @@ Transform:
   - {fileID: 1554725766}
   - {fileID: 239023703}
   m_Father: {fileID: 532407802}
-  m_LocalEulerAnglesHint: {x: -0.432, y: -90.008, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!64 &842751362
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -45015,14 +45015,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873346025}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000054016702, y: 0.00000009685753, z: 0.6640571, w: 0.7476819}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.0038957787, y: 0.0000115159155, z: -0.0023595223}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1053288205}
   m_Father: {fileID: 1831289923}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 83.22}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &873346027
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58611,7 +58611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5491f7c931788941960be261febaaa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafeManager
-  correctPassword: 2
+  correctPassword: 02010226
   displayText: {fileID: 0}
   doorPivot: {fileID: 239023703}
   openAngle: -90

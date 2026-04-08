@@ -32,7 +32,7 @@ public class EndDoorManager : MonoBehaviour
     void Start()
     {
         closedRotation = transform.localRotation;
-        targetRotation = closedRotation * Quaternion.Euler(0, openAngle, 0);
+        targetRotation = closedRotation * Quaternion.Euler(0, 0, openAngle);
 
         if (sfxSource != null) sfxSource.playOnAwake = false;
         

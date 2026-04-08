@@ -23,7 +23,7 @@ public class DoorManager : MonoBehaviour
         closedRotation = transform.localRotation;
         
     
-        targetRotation = closedRotation * Quaternion.Euler(0, openAngle, 0);
+        targetRotation = closedRotation * Quaternion.Euler(0, 0, openAngle);
     }
 
     void Update()

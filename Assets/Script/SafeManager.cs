@@ -37,8 +37,8 @@ public class SafeManager : MonoBehaviour
     {
         currentHealth = maxHealth;
         closedRotation = doorPivot.localRotation;
-        targetRotation = closedRotation * Quaternion.Euler(0, openAngle, 0);
-        UpdateDisplay();
+        targetRotation = closedRotation * Quaternion.Euler(0, 0, openAngle);
+        //UpdateDisplay();
     }
 
     // 輸入密碼
@@ -54,7 +54,7 @@ public class SafeManager : MonoBehaviour
         if (correctPassword.StartsWith(currentInput + nextDigit))
         {
             currentInput += nextDigit;
-            UpdateDisplay();
+           // UpdateDisplay();
 
             if (currentInput == correctPassword)
             {
@@ -95,7 +95,7 @@ public class SafeManager : MonoBehaviour
     {
         isProcessed = true;
         PlaySound(successSound);
-        displayText.text = "OPEN";
+        //displayText.text = "OPEN";
         
         StartCoroutine(AnimateDoor());
         SanitySystem.Instance.ChangeSanity(-15);
@@ -107,12 +107,13 @@ public class SafeManager : MonoBehaviour
     {
         if(audioSource && boxCrushSFX) audioSource.PlayOneShot(boxCrushSFX);
         isProcessed = true;
-        displayText.text = "SAD";
+        //displayText.text = "SAD";
         SanitySystem.Instance.ChangeSanity(20);
         if(audioSource && boxCrushSFX) audioSource.PlayOneShot(boxCrushSFX);
         if (normalSafeModel != null) normalSafeModel.SetActive(false);
         if (brokenSafePrefab != null)
         {
+            Quaternion correction = transform.rotation * Quaternion.Euler(-90f, 0, 0);
             Instantiate(brokenSafePrefab, transform.position, transform.rotation);
         }
         
@@ -138,16 +139,16 @@ public class SafeManager : MonoBehaviour
     IEnumerator HandleError()
     {
         PlaySound(errorSound);
-        displayText.text = "ERROR";
+        //displayText.text = "ERROR";
         currentInput = "";
         yield return new WaitForSeconds(1.0f);
-        UpdateDisplay();
+        //UpdateDisplay();
     }
 
-    void UpdateDisplay()
-    {
-        if (displayText != null) displayText.text = currentInput == "" ? "----" : currentInput;
-    }
+    //void UpdateDisplay()
+    //{
+    //    if (displayText != null) displayText.text = currentInput == "" ? "----" : currentInput;
+    //}
 
     void PlaySound(AudioClip clip)
     {

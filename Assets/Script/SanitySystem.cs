@@ -24,6 +24,8 @@ public class SanitySystem : MonoBehaviour
     {
         // ✅ 修改 2：把原本會強制變成 100 的那行刪掉了，這樣一開場才是 50！
         UpdateUI();
+
+        OVRManager.instance.trackingOriginType = OVRManager.TrackingOrigin.FloorLevel;
     }
 
     // 當外部事件結束或觸發時，呼叫這個方法
