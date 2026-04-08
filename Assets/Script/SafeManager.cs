@@ -113,8 +113,8 @@ public class SafeManager : MonoBehaviour
         if (normalSafeModel != null) normalSafeModel.SetActive(false);
         if (brokenSafePrefab != null)
         {
-            Quaternion correction = transform.rotation * Quaternion.Euler(-90f, 0, 0);
-            Instantiate(brokenSafePrefab, transform.position, transform.rotation);
+            Quaternion correction = transform.rotation * Quaternion.Euler(90f, 0, 0);
+            Instantiate(brokenSafePrefab, transform.position, correction);
         }
         
         
