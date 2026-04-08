@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 0.81
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 4f119363896648345af191167bf58374, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -4994,6 +4994,7 @@ GameObject:
   - component: {fileID: 124116795}
   - component: {fileID: 124116797}
   - component: {fileID: 124116796}
+  - component: {fileID: 124116798}
   m_Layer: 0
   m_Name: tools_1_low
   m_TagString: Untagged
@@ -5010,7 +5011,7 @@ Transform:
   m_GameObject: {fileID: 124116794}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5073,6 +5074,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124116794}
   m_Mesh: {fileID: -4823505863381909750, guid: 32504bad0e8533442b9db1205c22d68f, type: 3}
+--- !u!65 &124116798
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124116794}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00081724074, y: 0.00022224012, z: 0.00022808372}
+  m_Center: {x: -0.000028770535, y: -0.000004980113, z: 0.00212101}
 --- !u!1 &125371610
 GameObject:
   m_ObjectHideFlags: 0
@@ -10973,7 +10995,7 @@ MonoBehaviour:
   audioSource: {fileID: 209269528}
   parentsSigh: {fileID: 0}
   fatherAngry: {fileID: 0}
-  fireSource: {fileID: 0}
+  fireSource: {fileID: 240470758}
   fireLoopSFX: {fileID: 0}
 --- !u!54 &240470755
 Rigidbody:
@@ -12138,7 +12160,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -13831,7 +13853,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -25858,7 +25880,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -27128,7 +27150,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -28347,7 +28369,7 @@ MonoBehaviour:
   audioSource: {fileID: 209269528}
   parentsSigh: {fileID: 0}
   fatherAngry: {fileID: 0}
-  fireSource: {fileID: 0}
+  fireSource: {fileID: 592808094}
   fireLoopSFX: {fileID: 0}
 --- !u!54 &592808091
 Rigidbody:
@@ -29881,7 +29903,7 @@ MonoBehaviour:
   audioSource: {fileID: 209269528}
   parentsSigh: {fileID: 0}
   fatherAngry: {fileID: 0}
-  fireSource: {fileID: 0}
+  fireSource: {fileID: 629352514}
   fireLoopSFX: {fileID: 0}
 --- !u!54 &629352511
 Rigidbody:
@@ -32167,7 +32189,7 @@ MonoBehaviour:
   audioSource: {fileID: 209269528}
   parentsSigh: {fileID: 0}
   fatherAngry: {fileID: 0}
-  fireSource: {fileID: 0}
+  fireSource: {fileID: 661186300}
   fireLoopSFX: {fileID: 0}
 --- !u!54 &661186297
 Rigidbody:
@@ -41102,7 +41124,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -43798,7 +43820,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -48293,7 +48315,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -52863,7 +52885,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -55152,7 +55174,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -57020,7 +57042,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -58116,7 +58138,6 @@ GameObject:
   - component: {fileID: 1065660108}
   - component: {fileID: 1065660107}
   - component: {fileID: 1065660110}
-  - component: {fileID: 1065660111}
   m_Layer: 0
   m_Name: hammer
   m_TagString: hammer
@@ -58138,8 +58159,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1223945094}
-  - {fileID: 1529076166}
   - {fileID: 124116795}
+  - {fileID: 1529076166}
   - {fileID: 1449409695}
   - {fileID: 1125784258}
   m_Father: {fileID: 532407802}
@@ -58239,27 +58260,6 @@ MonoBehaviour:
   _releaseDistance: 0
   _resetGrabOnGrabsUpdated: 1
   _physicsGrabbable: {fileID: 0}
---- !u!65 &1065660111
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1065660105}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.047220316, y: 0.7733229, z: 0.14837112}
-  m_Center: {x: 0.4763901, y: 0.11333849, z: 0.42581558}
 --- !u!1001 &1069963880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60850,7 +60850,7 @@ MonoBehaviour:
   audioSource: {fileID: 209269528}
   parentsSigh: {fileID: 0}
   fatherAngry: {fileID: 0}
-  fireSource: {fileID: 0}
+  fireSource: {fileID: 1131058518}
   fireLoopSFX: {fileID: 0}
 --- !u!54 &1131058515
 Rigidbody:
@@ -66087,6 +66087,7 @@ GameObject:
   - component: {fileID: 1223945094}
   - component: {fileID: 1223945096}
   - component: {fileID: 1223945095}
+  - component: {fileID: 1223945097}
   m_Layer: 0
   m_Name: tool_2_low
   m_TagString: Untagged
@@ -66166,6 +66167,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223945093}
   m_Mesh: {fileID: -897963739697918387, guid: 32504bad0e8533442b9db1205c22d68f, type: 3}
+--- !u!65 &1223945097
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223945093}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00027884453, y: 0.00016934144, z: 0.0021245156}
+  m_Center: {x: 0.00001091045, y: -0.00000018163675, z: 0.001064021}
 --- !u!1 &1226203289
 GameObject:
   m_ObjectHideFlags: 0
@@ -79236,7 +79258,7 @@ MonoBehaviour:
   audioSource: {fileID: 209269528}
   parentsSigh: {fileID: 0}
   fatherAngry: {fileID: 0}
-  fireSource: {fileID: 0}
+  fireSource: {fileID: 1519386489}
   fireLoopSFX: {fileID: 0}
 --- !u!54 &1519386486
 Rigidbody:
@@ -79970,7 +79992,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 6.005956, y: 6.0054326, z: 0.060820337}
-  m_Center: {x: -2.981693, y: 2.9815643, z: -0.030410161}
+  m_Center: {x: -2.981693, y: 2.9815648, z: -0.03041016}
 --- !u!1001 &1532296046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88878,7 +88900,7 @@ MonoBehaviour:
   audioSource: {fileID: 209269528}
   parentsSigh: {fileID: 0}
   fatherAngry: {fileID: 0}
-  fireSource: {fileID: 0}
+  fireSource: {fileID: 1723571757}
   fireLoopSFX: {fileID: 0}
 --- !u!54 &1723571754
 Rigidbody:
@@ -89246,7 +89268,7 @@ MonoBehaviour:
   audioSource: {fileID: 209269528}
   parentsSigh: {fileID: 0}
   fatherAngry: {fileID: 0}
-  fireSource: {fileID: 0}
+  fireSource: {fileID: 1727127274}
   fireLoopSFX: {fileID: 0}
 --- !u!54 &1727127271
 Rigidbody:
@@ -100712,7 +100734,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -103147,7 +103169,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
