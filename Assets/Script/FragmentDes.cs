@@ -12,6 +12,11 @@ public class FragmentDes : MonoBehaviour
     public GameObject burntPaperPrefab; 
     public GameObject completePaperPrefab; 
     public Transform spawnPoint; 
+
+    [Header("生成物旋轉角度 (Euler Angles)")]
+    public Vector3 completePaperRotation = Vector3.zero;
+    public Vector3 burntPaperRotation = Vector3.zero;
+
     [Header("音效與特效")]
     public AudioSource audioSource;
     public AudioClip parentsSigh; 
@@ -72,35 +77,46 @@ public class FragmentDes : MonoBehaviour
     }
 
     void TriggerFinalState(bool isSuccess)
-    {
-        if (isFinished) return;
-        isFinished = true;
-
-        GameObject[] allFragments = GameObject.FindGameObjectsWithTag("Fragment");
-        foreach (GameObject f in allFragments) f.SetActive(false);
-
-        if (isSuccess)
         {
-            Debug.Log("拼湊成功！生成完整紙張。");
-            if (completePaperPrefab != null) Instantiate(completePaperPrefab, spawnPoint.position, spawnPoint.rotation);
-            if (audioSource && parentsSigh) audioSource.PlayOneShot(parentsSigh);
-            
-            if (targetDoor != null) targetDoor.OpenDoor(true);
-            SanitySystem.Instance.ChangeSanity(-15);
-        }
-        else
-        {
-            Debug.Log("被燒毀了！生成燒焦紙張。");
+            if (isFinished) return;
+            isFinished = true;
 
-            if (burntPaperPrefab != null) Instantiate(burntPaperPrefab, spawnPoint.position, spawnPoint.rotation);
-            if (audioSource && fatherAngry) {
-                audioSource.PlayOneShot(fatherAngry);
-                StopBurning();
+            GameObject[] allFragments = GameObject.FindGameObjectsWithTag("Fragment");
+            foreach (GameObject f in allFragments) f.SetActive(false);
+
+            if (isSuccess)
+            {
+                Debug.Log("拼湊成功！生成完整紙張。");
+                if (completePaperPrefab != null) 
+                {
+                    // 使用 Quaternion.Euler 將 Vector3 轉換為角度
+                    Quaternion spawnRotation = Quaternion.Euler(completePaperRotation);
+                    Instantiate(completePaperPrefab, spawnPoint.position, spawnRotation);
+                }
+                
+                if (audioSource && parentsSigh) audioSource.PlayOneShot(parentsSigh);
+                if (targetDoor != null) targetDoor.OpenDoor(true);
+                SanitySystem.Instance.ChangeSanity(-15);
             }
-            
-            HapticManager.Instance.VibrateHeavy(OVRInput.Controller.Active);
-            SanitySystem.Instance.ChangeSanity(20);
-            if (targetDoor != null) targetDoor.OpenDoor(false);
+            else
+            {
+                Debug.Log("被燒毀了！生成燒焦紙張。");
+
+                if (burntPaperPrefab != null) 
+                {
+                    // 使用 Quaternion.Euler 將 Vector3 轉換為角度
+                    Quaternion spawnRotation = Quaternion.Euler(burntPaperRotation);
+                    Instantiate(burntPaperPrefab, spawnPoint.position, spawnRotation);
+                }
+
+                if (audioSource && fatherAngry) {
+                    audioSource.PlayOneShot(fatherAngry);
+                    StopBurning();
+                }
+                
+                HapticManager.Instance.VibrateHeavy(OVRInput.Controller.Active);
+                SanitySystem.Instance.ChangeSanity(15);
+                if (targetDoor != null) targetDoor.OpenDoor(false);
+            }
         }
     }
-}

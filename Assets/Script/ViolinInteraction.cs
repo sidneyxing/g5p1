@@ -12,7 +12,8 @@ public class ViolinInteraction : MonoBehaviour
     public DoorManager targetDoor;
 
     [Header("狀態追蹤")]
-    public int stringsHandled = 0; // 已處理的弦數量
+    public int cutCount = 0;
+    public int wipeCount = 0;
     private bool interactionTypeLocked = false; // 鎖定互動類型
     private string currentMode = ""; // "Cut" or "Wipe"
 
@@ -22,13 +23,13 @@ public class ViolinInteraction : MonoBehaviour
         if (currentMode == "Wipe") return; // 如果已經開始擦拭，則禁止剪斷
         
         currentMode = "Cut";
-        stringsHandled++;
+        cutCount++;
         
         // 播放剪斷音效與震動
         if(violinSource && cutSFX) violinSource.PlayOneShot(cutSFX);
         HapticManager.Instance.VibrateHeavy(OVRInput.Controller.Active);
 
-        if (stringsHandled >= 4)
+        if (cutCount >= 4)
         {
             TriggerFailure();
         }
@@ -37,16 +38,20 @@ public class ViolinInteraction : MonoBehaviour
     // 當血跡被擦掉時呼叫
     public void OnStringWiped(GameObject bloodObj)
     {
-        if (currentMode == "Cut") return; // 互斥邏輯：若已剪斷則無法擦拭
+        if (currentMode == "Cut") {
+            Debug.LogWarning("因為已經剪斷弦，無法進行擦拭！");
+            return;
+        }
 
         currentMode = "Wipe";
-        stringsHandled++; // 借用這個變數來計數擦拭了多少血跡
+        wipeCount++; 
+        Debug.Log($"擦拭進度: {wipeCount}/1");
 
-        // 播放擦拭音效與輕微震動
         HapticManager.Instance.VibrateLight(OVRInput.Controller.Active);
 
-        if (stringsHandled >= 4) // 假設有四處血跡
+        if (wipeCount >= 1) 
         {
+            Debug.Log("擦拭完成，觸發成功開門");
             TriggerSuccess();
         }
     }
@@ -55,7 +60,7 @@ public class ViolinInteraction : MonoBehaviour
 
     void TriggerFailure()
     {
-        SanitySystem.Instance.ChangeSanity(20);
+        SanitySystem.Instance.ChangeSanity(15);
         if (targetDoor != null) targetDoor.OpenDoor(false);
     }
 

@@ -37,7 +37,7 @@ public class SafeManager : MonoBehaviour
     {
         currentHealth = maxHealth;
         closedRotation = doorPivot.localRotation;
-        targetRotation = closedRotation * Quaternion.Euler(0, 0, openAngle);
+        targetRotation = closedRotation * Quaternion.Euler(0, openAngle, 0);
         //UpdateDisplay();
     }
 
@@ -95,11 +95,13 @@ public class SafeManager : MonoBehaviour
     {
         isProcessed = true;
         PlaySound(successSound);
-        //displayText.text = "OPEN";
         
-        StartCoroutine(AnimateDoor());
+        if (doorPivot != null)
+        {
+            StartCoroutine(AnimateDoor());
+        }
+        
         SanitySystem.Instance.ChangeSanity(-15);
-        
         NotifyDoorManager(true);
     }
 
@@ -107,16 +109,25 @@ public class SafeManager : MonoBehaviour
     {
         if(audioSource && boxCrushSFX) audioSource.PlayOneShot(boxCrushSFX);
         isProcessed = true;
-        //displayText.text = "SAD";
-        SanitySystem.Instance.ChangeSanity(20);
-        if(audioSource && boxCrushSFX) audioSource.PlayOneShot(boxCrushSFX);
+
+        SanitySystem.Instance.ChangeSanity(15);
+
+        // 1. 隱藏原本的保險箱模型
         if (normalSafeModel != null) normalSafeModel.SetActive(false);
+
+        // 2. 關鍵：移除或隱藏原本的那封道歉信
+        if (destroyedLetter != null) 
+        {
+            destroyedLetter.SetActive(false); 
+            // 或者使用 Destroy(destroyedLetter); 如果你確定之後完全不需要它
+        }
+
+        // 3. 生成破碎的保險箱預製物
         if (brokenSafePrefab != null)
         {
             Quaternion correction = transform.rotation * Quaternion.Euler(90f, 0, 0);
             Instantiate(brokenSafePrefab, transform.position, correction);
         }
-        
         
         NotifyDoorManager(false);
     }
@@ -160,9 +171,14 @@ public class SafeManager : MonoBehaviour
         float t = 0;
         while (t < 1f)
         {
-            t += Time.deltaTime * 2f;
+            // 每秒增加 2f (約 0.5 秒開完)
+            t += Time.deltaTime * 2f; 
+            
+            // 使用球面線性插值從原始旋轉轉向目標旋轉（此時目標已在 Start 設定為 Y 軸旋轉）
             doorPivot.localRotation = Quaternion.Slerp(closedRotation, targetRotation, t);
             yield return null;
         }
+        // 確保最後角度精準到位
+        doorPivot.localRotation = targetRotation; 
     }
 }

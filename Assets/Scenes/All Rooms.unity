@@ -9449,6 +9449,8 @@ MonoBehaviour:
   burntPaperPrefab: {fileID: 7839668159279632550, guid: 50b726e1c5f65244486a4ddd54b731a1, type: 3}
   completePaperPrefab: {fileID: 2016401173771641716, guid: ac33bc712718acb43af3b4b93ca1746b, type: 3}
   spawnPoint: {fileID: 616919574}
+  completePaperRotation: {x: -90, y: -90, z: 0}
+  burntPaperRotation: {x: 0, y: -90, z: 0}
   audioSource: {fileID: 209269528}
   parentsSigh: {fileID: 8300000, guid: 3d6487716a98e4f4293346671740f055, type: 3}
   fatherAngry: {fileID: 8300000, guid: 9c40679d03777c54dbf00d61a1009098, type: 3}
@@ -10178,6 +10180,7 @@ GameObject:
   - component: {fileID: 224932180}
   - component: {fileID: 224932179}
   - component: {fileID: 224932181}
+  - component: {fileID: 224932182}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -10304,6 +10307,23 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &224932182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224932177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 7faf7b1ea31b859479b1e33c27b7b087, type: 2}
 --- !u!1 &225825274
 GameObject:
   m_ObjectHideFlags: 0
@@ -10732,7 +10752,7 @@ Transform:
   m_GameObject: {fileID: 239023702}
   serializedVersion: 2
   m_LocalRotation: {x: 0.026213877, y: 0.8818803, z: 0.018670594, w: -0.4703739}
-  m_LocalPosition: {x: -1.52, y: 0.26, z: -1.59}
+  m_LocalPosition: {x: -1.52, y: 0.262, z: -1.675}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10770,13 +10790,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240470750}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.099127874, y: 0, z: 0}
+  m_LocalRotation: {x: -0.70705664, y: 0.00843349, z: 0.0084335795, w: 0.70705646}
+  m_LocalPosition: {x: 0.101213425, y: -0.000000070768714, z: 0.012908204}
   m_LocalScale: {x: 123.57149, y: 161.8621, z: 59.847206}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 30106299}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 1.367}
 --- !u!23 &240470752
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10851,6 +10871,8 @@ MonoBehaviour:
   burntPaperPrefab: {fileID: 7839668159279632550, guid: 50b726e1c5f65244486a4ddd54b731a1, type: 3}
   completePaperPrefab: {fileID: 2016401173771641716, guid: ac33bc712718acb43af3b4b93ca1746b, type: 3}
   spawnPoint: {fileID: 616919574}
+  completePaperRotation: {x: -90, y: -90, z: 0}
+  burntPaperRotation: {x: 0, y: -90, z: 0}
   audioSource: {fileID: 240470758}
   parentsSigh: {fileID: 8300000, guid: 3d6487716a98e4f4293346671740f055, type: 3}
   fatherAngry: {fileID: 8300000, guid: 9c40679d03777c54dbf00d61a1009098, type: 3}
@@ -21725,6 +21747,7 @@ GameObject:
   - component: {fileID: 462494291}
   - component: {fileID: 462494290}
   - component: {fileID: 462494295}
+  - component: {fileID: 462494296}
   m_Layer: 0
   m_Name: apology_letter
   m_TagString: Untagged
@@ -22034,6 +22057,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.010657, y: 0.018264966, z: 2.0000005}
   m_Center: {x: -0.0053433203, y: 0.0075495574, z: -0.00000047642365}
+--- !u!54 &462494296
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462494286}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &465142003
 GameObject:
   m_ObjectHideFlags: 0
@@ -28367,6 +28417,8 @@ MonoBehaviour:
   burntPaperPrefab: {fileID: 7839668159279632550, guid: 50b726e1c5f65244486a4ddd54b731a1, type: 3}
   completePaperPrefab: {fileID: 2016401173771641716, guid: ac33bc712718acb43af3b4b93ca1746b, type: 3}
   spawnPoint: {fileID: 616919574}
+  completePaperRotation: {x: -90, y: -90, z: 0}
+  burntPaperRotation: {x: 0, y: -90, z: 0}
   audioSource: {fileID: 592808094}
   parentsSigh: {fileID: 8300000, guid: 3d6487716a98e4f4293346671740f055, type: 3}
   fatherAngry: {fileID: 8300000, guid: 9c40679d03777c54dbf00d61a1009098, type: 3}
@@ -28805,27 +28857,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!65 &598420969
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598420961}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.016490707, y: 0.0015659195, z: 0.02805366}
-  m_Center: {x: -0.000000043473605, y: -0.0006942449, z: -0.008218912}
 --- !u!1 &601489218
 GameObject:
   m_ObjectHideFlags: 0
@@ -30158,6 +30189,8 @@ MonoBehaviour:
   burntPaperPrefab: {fileID: 7839668159279632550, guid: 50b726e1c5f65244486a4ddd54b731a1, type: 3}
   completePaperPrefab: {fileID: 2016401173771641716, guid: ac33bc712718acb43af3b4b93ca1746b, type: 3}
   spawnPoint: {fileID: 616919574}
+  completePaperRotation: {x: -90, y: -90, z: 0}
+  burntPaperRotation: {x: 0, y: -90, z: 0}
   audioSource: {fileID: 629352514}
   parentsSigh: {fileID: 8300000, guid: 3d6487716a98e4f4293346671740f055, type: 3}
   fatherAngry: {fileID: 8300000, guid: 9c40679d03777c54dbf00d61a1009098, type: 3}
@@ -31465,7 +31498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 652088080}
   - component: {fileID: 652088081}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: enter_sis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32193,6 +32226,8 @@ MonoBehaviour:
   burntPaperPrefab: {fileID: 7839668159279632550, guid: 50b726e1c5f65244486a4ddd54b731a1, type: 3}
   completePaperPrefab: {fileID: 2016401173771641716, guid: ac33bc712718acb43af3b4b93ca1746b, type: 3}
   spawnPoint: {fileID: 616919574}
+  completePaperRotation: {x: -90, y: -90, z: 0}
+  burntPaperRotation: {x: 0, y: -90, z: 0}
   audioSource: {fileID: 661186300}
   parentsSigh: {fileID: 8300000, guid: 3d6487716a98e4f4293346671740f055, type: 3}
   fatherAngry: {fileID: 8300000, guid: 9c40679d03777c54dbf00d61a1009098, type: 3}
@@ -49758,8 +49793,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.0185655, z: 3.3109417}
-  m_Center: {x: -0.0000005632434, y: 0.009282865, z: 0.3781151}
+  m_Size: {x: 0.1, y: 0.1, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0.75}
 --- !u!4 &956454702 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3636e598751abe747b6cb753f732b66f, type: 3}
@@ -49787,7 +49822,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
@@ -58932,9 +58967,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117448903}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.31293026, y: -0.62701714, z: -0.63276905, w: -0.3294353}
-  m_LocalPosition: {x: 0.3814378, y: -0.17466514, z: -2.3215473}
-  m_LocalScale: {x: 99.99998, y: 99.99998, z: 100}
+  m_LocalRotation: {x: 0.31431833, y: -0.6243789, z: -0.63545364, w: -0.32795385}
+  m_LocalPosition: {x: 0.38143897, y: -0.17467058, z: -2.3215475}
+  m_LocalScale: {x: 100, y: 99.99998, z: 100.000015}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 814374227}
@@ -58956,7 +58991,7 @@ Transform:
   - {fileID: 1418831375}
   - {fileID: 1571823593}
   m_Father: {fileID: 239023703}
-  m_LocalEulerAnglesHint: {x: -89.972, y: 0, z: -53.95}
+  m_LocalEulerAnglesHint: {x: -88.577, y: 23.904, z: 102.071}
 --- !u!23 &1117448905
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59029,7 +59064,7 @@ MonoBehaviour:
   correctPassword: 2
   displayText: {fileID: 0}
   doorPivot: {fileID: 239023703}
-  openAngle: -90
+  openAngle: -60
   maxHealth: 3
   normalSafeModel: {fileID: 842751360}
   brokenSafePrefab: {fileID: 7488472557125644434, guid: eb6fdd46b6b9c014792c09d4ef1a3153, type: 3}
@@ -59389,8 +59424,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 1065660107}
-  _rigidbody: {fileID: 1065660108}
+  _pointableElement: {fileID: 462494293}
+  _rigidbody: {fileID: 462494296}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -59412,8 +59447,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 1065660107}
-  _rigidbody: {fileID: 1065660108}
+  _pointableElement: {fileID: 462494293}
+  _rigidbody: {fileID: 462494296}
   _physicsGrabbable: {fileID: 0}
   _resetGrabOnGrabsUpdated: 1
   _scoringModifier:
@@ -59926,6 +59961,8 @@ MonoBehaviour:
   burntPaperPrefab: {fileID: 7839668159279632550, guid: 50b726e1c5f65244486a4ddd54b731a1, type: 3}
   completePaperPrefab: {fileID: 2016401173771641716, guid: ac33bc712718acb43af3b4b93ca1746b, type: 3}
   spawnPoint: {fileID: 616919574}
+  completePaperRotation: {x: -90, y: -90, z: 0}
+  burntPaperRotation: {x: 0, y: -90, z: 0}
   audioSource: {fileID: 1131058518}
   parentsSigh: {fileID: 8300000, guid: 3d6487716a98e4f4293346671740f055, type: 3}
   fatherAngry: {fileID: 8300000, guid: 9c40679d03777c54dbf00d61a1009098, type: 3}
@@ -60652,7 +60689,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
@@ -62250,6 +62287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1165845698}
   - component: {fileID: 1165845697}
+  - component: {fileID: 1165845699}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -62270,7 +62308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SanitySystem
   maxSanity: 100
-  currentSanity: 100
+  currentSanity: 50
   sanityBarFill: {fileID: 0}
   sanityText: {fileID: 0}
 --- !u!4 &1165845698
@@ -62282,13 +62320,32 @@ Transform:
   m_GameObject: {fileID: 1165845696}
   serializedVersion: 2
   m_LocalRotation: {x: -0.04983959, y: 0.71391827, z: -0.05105517, w: -0.6965846}
-  m_LocalPosition: {x: 7.54, y: -1.113, z: -8.152745}
+  m_LocalPosition: {x: 7.787, y: -1.146, z: -9.608}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1408151984}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1165845699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165845696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb437e9a44b5c7542870a9e936970cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FootStep
+  footstepSFX:
+  - {fileID: 8300000, guid: 0ff5239c4f00ff746a9a744a1614c28d, type: 3}
+  - {fileID: 8300000, guid: f1b8b58c9a1a408479cd1f2b2b2a8c1d, type: 3}
+  - {fileID: 8300000, guid: 493d2b00269e1634e8b03b2a2f869285, type: 3}
+  - {fileID: 8300000, guid: 10d6ce42363e03847a10e5b690650163, type: 3}
+  audioSource: {fileID: 1408151986}
+  stepDistance: 0.8
 --- !u!1 &1166347206
 GameObject:
   m_ObjectHideFlags: 0
@@ -68501,7 +68558,7 @@ GameObject:
   - component: {fileID: 1297072512}
   - component: {fileID: 1297072511}
   - component: {fileID: 1297072513}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: enter_prota
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78392,6 +78449,8 @@ MonoBehaviour:
   burntPaperPrefab: {fileID: 7839668159279632550, guid: 50b726e1c5f65244486a4ddd54b731a1, type: 3}
   completePaperPrefab: {fileID: 2016401173771641716, guid: ac33bc712718acb43af3b4b93ca1746b, type: 3}
   spawnPoint: {fileID: 616919574}
+  completePaperRotation: {x: -90, y: -90, z: 0}
+  burntPaperRotation: {x: 0, y: -90, z: 0}
   audioSource: {fileID: 1519386489}
   parentsSigh: {fileID: 8300000, guid: 3d6487716a98e4f4293346671740f055, type: 3}
   fatherAngry: {fileID: 8300000, guid: 9c40679d03777c54dbf00d61a1009098, type: 3}
@@ -81228,7 +81287,7 @@ GameObject:
   - component: {fileID: 1583338379}
   - component: {fileID: 1583338376}
   - component: {fileID: 1583338380}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: end_trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88111,6 +88170,8 @@ MonoBehaviour:
   burntPaperPrefab: {fileID: 7839668159279632550, guid: 50b726e1c5f65244486a4ddd54b731a1, type: 3}
   completePaperPrefab: {fileID: 2016401173771641716, guid: ac33bc712718acb43af3b4b93ca1746b, type: 3}
   spawnPoint: {fileID: 616919574}
+  completePaperRotation: {x: -90, y: -90, z: 0}
+  burntPaperRotation: {x: 0, y: -90, z: 0}
   audioSource: {fileID: 1723571757}
   parentsSigh: {fileID: 8300000, guid: 3d6487716a98e4f4293346671740f055, type: 3}
   fatherAngry: {fileID: 8300000, guid: 9c40679d03777c54dbf00d61a1009098, type: 3}
@@ -88479,6 +88540,8 @@ MonoBehaviour:
   burntPaperPrefab: {fileID: 7839668159279632550, guid: 50b726e1c5f65244486a4ddd54b731a1, type: 3}
   completePaperPrefab: {fileID: 2016401173771641716, guid: ac33bc712718acb43af3b4b93ca1746b, type: 3}
   spawnPoint: {fileID: 616919574}
+  completePaperRotation: {x: -90, y: -90, z: 0}
+  burntPaperRotation: {x: 0, y: -90, z: 0}
   audioSource: {fileID: 1727127274}
   parentsSigh: {fileID: 8300000, guid: 3d6487716a98e4f4293346671740f055, type: 3}
   fatherAngry: {fileID: 8300000, guid: 9c40679d03777c54dbf00d61a1009098, type: 3}
@@ -93848,9 +93911,6 @@ PrefabInstance:
       addedObject: {fileID: 1413256708}
     - targetCorrespondingSourceObject: {fileID: -8682638973606794872, guid: fea3505429e3cb9438abd873ff55d665, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 598420969}
-    - targetCorrespondingSourceObject: {fileID: -8682638973606794872, guid: fea3505429e3cb9438abd873ff55d665, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 598420966}
     - targetCorrespondingSourceObject: {fileID: -8682638973606794872, guid: fea3505429e3cb9438abd873ff55d665, type: 3}
       insertIndex: -1
@@ -93873,12 +93933,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c1801af3215ca49a0cf9f8726b1c63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ViolinInteraction
-  violinSource: {fileID: 0}
+  violinSource: {fileID: 598420966}
   normalViolin: {fileID: 44560059}
-  cutSFX: {fileID: 8300000, guid: 3d80ffa3ecc1d6744a2ec11466728c84, type: 3}
+  cutSFX: {fileID: 8300000, guid: 918652ff6a4cd264d810001fa8858cee, type: 3}
   sisterThanksVO: {fileID: 0}
   targetDoor: {fileID: 873346029}
-  stringsHandled: 0
+  cutCount: 0
+  wipeCount: 0
 --- !u!1 &1808019723
 GameObject:
   m_ObjectHideFlags: 0
@@ -109722,6 +109783,10 @@ PrefabInstance:
       propertyPath: _centerEyeCamera
       value: 
       objectReference: {fileID: 224932179}
+    - target: {fileID: 2336446269904782542, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      propertyPath: _userFOV
+      value: 360
+      objectReference: {fileID: 0}
     - target: {fileID: 2336446269904782542, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       propertyPath: _leftEyeAnchor
       value: 
