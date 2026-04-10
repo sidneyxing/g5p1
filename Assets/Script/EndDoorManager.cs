@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic; // 新增這行，為了使用 List 清單功能
 using UnityEngine.InputSystem;
 
 public class EndDoorManager : MonoBehaviour
@@ -14,7 +15,12 @@ public class EndDoorManager : MonoBehaviour
     public GameObject sad;
 
     [Header("環境底噪設定 (Ambient)")]
-    public AudioSource ambientSource; // 遊戲開始播的底噪
+    public AudioSource ambientSource; // 播放底噪的 AudioSource
+    [Tooltip("請在這裡放入4首底噪/音效")]
+    public AudioClip[] ambientClips = new AudioClip[4]; // 幫你準備好4個音效欄位
+
+    private List<AudioClip> unplayedAmbientClips = new List<AudioClip>(); // 追蹤這輪還沒播過的音效
+    private Coroutine ambientRoutine; // 儲存播放背景音的協程，方便結局時打斷
 
     [Header("音效設定 (SFX)")]
     public AudioSource sfxSource;
@@ -39,10 +45,11 @@ public class EndDoorManager : MonoBehaviour
 
         if (sfxSource != null) sfxSource.playOnAwake = false;
 
-        // 確保遊戲一開始播放底噪
-        if (ambientSource != null && !ambientSource.isPlaying)
+        // 確保環境底噪不會單首無限循環，並開始播放隨機歌單
+        if (ambientSource != null)
         {
-            ambientSource.Play();
+            ambientSource.loop = false; // 強制關閉單首循環
+            ambientRoutine = StartCoroutine(PlayAmbientPlaylist());
         }
     }
 
@@ -69,9 +76,48 @@ public class EndDoorManager : MonoBehaviour
         StartCoroutine(AnimateDoor(speed));
     }
 
+    // --- 新增：處理底噪隨機不重複播放的協程 ---
+    IEnumerator PlayAmbientPlaylist()
+    {
+        while (!isOpen) // 只要結局門還沒開，就繼續自動播
+        {
+            // 如果未播放清單空了（4首都播完了），就重新把所有音效加進來洗牌
+            if (unplayedAmbientClips.Count == 0)
+            {
+                foreach (AudioClip clip in ambientClips)
+                {
+                    if (clip != null) unplayedAmbientClips.Add(clip);
+                }
+            }
+
+            // 如果陣列裡什麼都沒放，就跳出避免當機
+            if (unplayedAmbientClips.Count == 0) yield break;
+
+            // 隨機抽一首
+            int randomIndex = Random.Range(0, unplayedAmbientClips.Count);
+            AudioClip clipToPlay = unplayedAmbientClips[randomIndex];
+
+            // 從「未播放清單」中移除這首，確保這輪不會再抽到重複的
+            unplayedAmbientClips.RemoveAt(randomIndex);
+
+            // 播放這首音效
+            ambientSource.clip = clipToPlay;
+            ambientSource.Play();
+
+            // 讓程式等待，直到這首音效的長度播完，再進入下一次迴圈
+            yield return new WaitForSeconds(clipToPlay.length);
+        }
+    }
+
     void PlayEndingBGM()
     {
-        // 結局觸發，停止環境底噪
+        // 結局觸發，立刻停止底噪的「自動播放協程」
+        if (ambientRoutine != null)
+        {
+            StopCoroutine(ambientRoutine);
+        }
+
+        // 停止當前正在出聲的底噪
         if (ambientSource != null && ambientSource.isPlaying)
         {
             ambientSource.Stop();
