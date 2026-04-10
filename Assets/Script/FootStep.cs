@@ -5,7 +5,8 @@ public class FootStep : MonoBehaviour
     [Header("音效設定")]
     public AudioClip[] footstepSFX; 
     public AudioSource audioSource;
-    
+    //public AudioClip[] footstepSFX;
+
     [Header("移動設定")]
     public float stepDistance = 0.8f; 
     private Vector3 lastPosition;
@@ -27,7 +28,7 @@ public class FootStep : MonoBehaviour
         float dist = Vector3.Distance(currentPos, prevPos);
         distanceMoved += dist;
         lastPosition = transform.position;
-
+        //playbgm();
         if (distanceMoved >= stepDistance)
         {
             PlayFootstep();
@@ -43,4 +44,8 @@ public class FootStep : MonoBehaviour
             audioSource.PlayOneShot(clip);
         }
     }
+    //void playbgm()
+    //{
+
+    //}
 }
